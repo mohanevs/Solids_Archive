@@ -303,3 +303,134 @@ footer{
 @media (max-width: 420px) {
     .cardGrid { grid-template-columns: 1fr; }
 }
+
+.detailPage {
+    display: flex;
+    gap: 40px;
+    max-width: 1300px;
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+    padding: 24px;
+    align-items: stretch;
+    font-family: "Commissioner", sans-serif;
+    box-sizing: border-box;
+}
+
+.detailLeft {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailMainImg {
+    width: 100%;
+    flex: 1;
+    border: 3px solid black;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    min-height: 0;
+}
+
+.detailMainImg img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.detailTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 14px 0 6px;
+    color: #111;
+}
+
+.detailDesc {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0 0 14px;
+}
+
+.sourceBtn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: #fff;
+    color: #111;
+    border: 2px solid #111;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+.sourceBtn:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.detailRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.componentsHeading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: #111;
+    border-bottom: 2px solid black;
+    padding-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.componentGrid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(70px, calc(100% / (var(--count) * 0.6))), 1fr));
+    gap: 10px;
+    min-height: 0;
+    align-content: start;
+}
+
+.componentCard {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.componentCard img {
+    width: 100%;
+    flex: 1;
+    object-fit: contain;
+    background-color: #fafafa;
+    padding: 6px;
+    box-sizing: border-box;
+    min-height: 0;
+}
+
+.componentCard p {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    padding: 5px 4px;
+    border-top: 1px solid #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+

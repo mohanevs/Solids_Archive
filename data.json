@@ -363,7 +363,8 @@
         "name": "1. Screw Jack - screw jack assmbled",
         "category": "Assembled",
         "image": "resources/Assembly/1. Screw Jack/screw jack assmbled.png",
-        "url": "/details"
+        "url": "/details/screw-jack",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/1.screw%20jack"
     },
     {
         "name": "1. Screw Jack - screw",
@@ -411,7 +412,8 @@
         "name": "2. Knuckle Joint - knuckle joint assembled",
         "category": "Assembled",
         "image": "resources/Assembly/2. Knuckle Joint/knuckle joint assembled.png",
-        "url": "/details"
+        "url": "/details/knuckle-joint",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/2.knuckle%20joint"
     },
     {
         "name": "2. Knuckle Joint - pin",
@@ -453,7 +455,8 @@
         "name": "3. Pipe Vice - pipe vice assembled",
         "category": "Assembled",
         "image": "resources/Assembly/3. Pipe Vice/pipe vice assembled.png",
-        "url": "/details"
+        "url": "/details/pipe-vice",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/3.pipe%20vice"
     },
     {
         "name": "3. Pipe Vice - screw",
@@ -501,13 +504,15 @@
         "name": "4. Plummer Block - plummer block assembled",
         "category": "Assembled",
         "image": "resources/Assembly/4. Plummer Block/plummer block assembled.png",
-        "url": "/details"
+        "url": "/details/plummer-block",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/4.plummer%20block"
     },
     {
-        "name": "5. Press Tool - @press tool assembled",
+        "name": "5. Press Tool - press tool assembled",
         "category": "Assembled",
         "image": "resources/Assembly/5. Press Tool/@press tool assembled.png",
-        "url": "/details"
+        "url": "/details/press-tool",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/5.press%20tool"
     },
     {
         "name": "5. Press Tool - bottom plate",
@@ -534,10 +539,11 @@
         "url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/5.%20Press%20Tool"
     },
     {
-        "name": "6. Tool Head of Shaper - @tool head of shaper assembled",
+        "name": "6. Tool Head of Shaper - tool head of shaper assembled",
         "category": "Assembled",
         "image": "resources/Assembly/6. Tool Head of Shaper/@tool head of shaper assembled.png",
-        "url": "/details"
+        "url": "/details/tool-head-of-shaper",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/6.tool%20head%20of%20shaper"
     },
     {
         "name": "6. Tool Head of Shaper - back plate",
@@ -636,10 +642,11 @@
         "url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/6.%20Tool%20Head%20of%20Shaper"
     },
     {
-        "name": "7. Motor Blower - @motor blower assemled",
+        "name": "7. Motor Blower - motor blower assemled",
         "category": "Assembled",
         "image": "resources/Assembly/7. Motor Blower/@motor blower assemled.png",
-        "url": "/details"
+        "url": "/details/motor-blower",
+        "github_url": "https://github.com/mohanevs/solid-modeling-catia-v6/tree/main/Assembly/7.motor%20blower"
     },
     {
         "name": "7. Motor Blower - blower",

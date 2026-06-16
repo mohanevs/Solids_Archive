@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Imperial+Script&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/gear.png">
+    <title>{{ assembly.title }} - Solids Archive</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="/">Solids Archive</a></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/search?category=3D Model">3D Model</a></li>
+                <li><a href="/search?category=Assembled">Assembly</a></li>
+                <li><a href="/search?category=Drawing">Drawing</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="detailPage">
+
+        <div class="detailLeft">
+            <div class="detailMainImg">
+                <img src="/{{ assembly.image }}" alt="{{ assembly.title }}">
+            </div>
+            <h1 class="detailTitle">{{ assembly.title }}</h1>
+            <p class="detailDesc">{{ assembly.description }}</p>
+            <a href="{{ assembly.github_url }}" target="_blank">
+                <button class="sourceBtn">View Source on GitHub</button>
+            </a>
+        </div>
+
+        <div class="detailRight">
+            <h2 class="componentsHeading">Components</h2>
+            <div class="componentGrid" style="--count: {{ assembly.components | length }}">
+                {% for comp in assembly.components %}
+                <div class="componentCard">
+                    <img src="/{{ comp.image }}" alt="{{ comp.name }}">
+                    <p>{{ comp.name }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

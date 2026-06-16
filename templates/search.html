@@ -40,7 +40,7 @@
             <div class="card-body">
                 <h3>{{ item.name }}</h3>
                 <span class="card-tag">{{ item.category }}</span>
-                <a href="{{ item.url }}" target="_blank">
+                <a href="{{ item.url }}" target="{{ '_blank' if item.category != 'Assembled' else '_self' }}">
                     <button class="card-btn">Get</button>
                 </a>
             </div>
