@@ -1,70 +1,70 @@
-*{
-  text-decoration: none;
+* {
+    text-decoration: none;
 }
 
-.navbar{
-  background: transparent;
-  font-family: "Commissioner", sans-serif;
-  padding-right: 15px;
-  padding-left: 15px;
+.navbar {
+    background: transparent;
+    font-family: "Commissioner", sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
-.navdiv{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.logo a{
-  font-family: "Imperial Script", cursive;
-  font-size: 35px;
-  font-weight: 600;
-  color: black;
+.logo a {
+    font-family: "Imperial Script", cursive;
+    font-size: 35px;
+    font-weight: 600;
+    color: black;
 }
 
-.navdiv li{
-  list-style: none;
-  display: inline-block;
+.navdiv li {
+    list-style: none;
+    display: inline-block;
 }
 
-.navdiv li a{
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 25px;
+.navdiv li a {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
 }
 
-.heroHead{
-  font-family: "Commissioner";
-  font-size: xx-large;
-  text-align: center;
-  padding: 100px;
+.heroHead {
+    font-family: "Commissioner";
+    font-size: xx-large;
+    text-align: center;
+    padding: 100px;
 }
 
 .heroHead p {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
-.getBtn{
-  text-align: center;
-  height: 50px;
-  width: auto;
-  text-decoration: none;
-  color: black;
-  padding: 10px 20px;
-  border: 2px solid black;
-  background-color: white;
-  border-radius: 10px;
+.getBtn {
+    text-align: center;
+    height: 50px;
+    width: auto;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 10px;
 }
 
-button:hover{
+button:hover {
     background: black;
     color: white;
 }
 
-.imgSec{
+.imgSec {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     padding: 30px;
     margin: 30px;
     gap: 80px;
@@ -73,54 +73,54 @@ button:hover{
     font-size: x-large;
 }
 
-.content{
+.content {
     flex: 2;
 }
 
-.image{
+.image {
     flex: 1;
     text-align: center;
 }
 
-.image img{
+.image img {
     width: 400px;
     height: auto;
     border: 3px solid black;
-  
+
 }
 
-footer{
+footer {
     border-top: 3px solid black;
     margin-top: 80px;
     padding: 40px;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 70px;
 }
 
-.footer-content{
+.footer-content {
     width: 30%;
 }
 
-.footer-content ul{
+.footer-content ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-content a{
+.footer-content a {
     text-decoration: none;
     color: black;
 }
 
-.footer-content a:hover{
+.footer-content a:hover {
     text-decoration: underline;
 }
 
-.list{
+.list {
     display: flex;
     gap: 20px;
     list-style: none;
@@ -128,12 +128,12 @@ footer{
     margin: 0;
 }
 
-.list li{
+.list li {
     display: flex;
     align-items: center;
 }
 
-.list a{
+.list a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,17 +141,17 @@ footer{
     text-decoration: none;
 }
 
-.list svg{
+.list svg {
     width: 28px;
     height: 28px;
     fill: black;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     font-size: 28px !important;
 }
 
-.list a:hover{
+.list a:hover {
     transform: translateY(-2px);
     transition: 0.2s;
 }
@@ -215,7 +215,7 @@ footer{
 
 .cardGrid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
     max-width: 1300px;
@@ -289,19 +289,27 @@ footer{
 }
 
 @media (max-width: 1100px) {
-    .cardGrid {grid-template-columns: repeat(3, 1fr);}
+    .cardGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 900px) {
-    .cardGrid { grid-template-columns: repeat(3, 1fr); }
+    .cardGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 650px) {
-    .cardGrid { grid-template-columns: repeat(2, 1fr); }
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 420px) {
-    .cardGrid { grid-template-columns: 1fr; }
+    .cardGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .detailPage {
@@ -461,4 +469,3 @@ footer{
 .backHomeBtn:hover {
     background-color: #333;
 }
-

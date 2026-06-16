@@ -18,16 +18,21 @@ app.mount("/resources", StaticFiles(directory=RESOURCE_DIR), name="resources")
 
 templates = Jinja2Templates(directory=PUBLIC_DIR / "templates")
 
-@app.get("/",response_class=HTMLResponse)
+
+@app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("home.html",{"request": request})
+    return templates.TemplateResponse("home.html", {"request": request})
+
 
 @app.get("/search", response_class=HTMLResponse)
 async def search(request: Request):
     data_path = BASE_DIR / "data.json"
     with open(data_path, encoding="utf-8") as f:
         items = json.load(f)
-    return templates.TemplateResponse("search.html", {"request": request, "items": items})
+    return templates.TemplateResponse(
+        "search.html", {"request": request, "items": items}
+    )
+
 
 assemblies = {
     "screw-jack": {
@@ -40,10 +45,16 @@ assemblies = {
             {"name": "Cup", "image": "resources/Assembly/1. Screw Jack/cup.png"},
             {"name": "Nut", "image": "resources/Assembly/1. Screw Jack/nut.png"},
             {"name": "Screw", "image": "resources/Assembly/1. Screw Jack/screw.png"},
-            {"name": "Screw Spindle", "image": "resources/Assembly/1. Screw Jack/screwSpindle.png"},
-            {"name": "Tommy Bar", "image": "resources/Assembly/1. Screw Jack/tommyBar.png"},
+            {
+                "name": "Screw Spindle",
+                "image": "resources/Assembly/1. Screw Jack/screwSpindle.png",
+            },
+            {
+                "name": "Tommy Bar",
+                "image": "resources/Assembly/1. Screw Jack/tommyBar.png",
+            },
             {"name": "Washer", "image": "resources/Assembly/1. Screw Jack/washer.png"},
-        ]
+        ],
     },
     "knuckle-joint": {
         "title": "Knuckle Joint",
@@ -51,12 +62,24 @@ assemblies = {
         "description": "A pin-based mechanical joint that connects two rods end-to-end, allowing angular movement in one plane.",
         "image": "resources/Assembly/2. Knuckle Joint/knuckle joint assembled.png",
         "components": [
-            {"name": "Collar", "image": "resources/Assembly/2. Knuckle Joint/collar.png"},
-            {"name": "Eye End", "image": "resources/Assembly/2. Knuckle Joint/eye end.png"},
-            {"name": "Fork End", "image": "resources/Assembly/2. Knuckle Joint/fork end.png"},
+            {
+                "name": "Collar",
+                "image": "resources/Assembly/2. Knuckle Joint/collar.png",
+            },
+            {
+                "name": "Eye End",
+                "image": "resources/Assembly/2. Knuckle Joint/eye end.png",
+            },
+            {
+                "name": "Fork End",
+                "image": "resources/Assembly/2. Knuckle Joint/fork end.png",
+            },
             {"name": "Pin", "image": "resources/Assembly/2. Knuckle Joint/pin.png"},
-            {"name": "Taper Pin", "image": "resources/Assembly/2. Knuckle Joint/taper pin.png"},
-        ]
+            {
+                "name": "Taper Pin",
+                "image": "resources/Assembly/2. Knuckle Joint/taper pin.png",
+            },
+        ],
     },
     "pipe-vice": {
         "title": "Pipe Vice",
@@ -65,11 +88,17 @@ assemblies = {
         "image": "resources/Assembly/3. Pipe Vice/pipe vice assembled.png",
         "components": [
             {"name": "Base", "image": "resources/Assembly/3. Pipe Vice/base.png"},
-            {"name": "Handle Screw", "image": "resources/Assembly/3. Pipe Vice/handle screw.png"},
+            {
+                "name": "Handle Screw",
+                "image": "resources/Assembly/3. Pipe Vice/handle screw.png",
+            },
             {"name": "Handle", "image": "resources/Assembly/3. Pipe Vice/handle.png"},
-            {"name": "Movable Jaw", "image": "resources/Assembly/3. Pipe Vice/movable jaw.png"},
+            {
+                "name": "Movable Jaw",
+                "image": "resources/Assembly/3. Pipe Vice/movable jaw.png",
+            },
             {"name": "Screw", "image": "resources/Assembly/3. Pipe Vice/screw.png"},
-        ]
+        ],
     },
     "plummer-block": {
         "title": "Plummer Block",
@@ -78,12 +107,21 @@ assemblies = {
         "image": "resources/Assembly/4. Plummer Block/plummer block assembled.png",
         "components": [
             {"name": "Bolt", "image": "resources/Assembly/4. Plummer Block/bolt.png"},
-            {"name": "Brasses", "image": "resources/Assembly/4. Plummer Block/brasses.png"},
+            {
+                "name": "Brasses",
+                "image": "resources/Assembly/4. Plummer Block/brasses.png",
+            },
             {"name": "Cap", "image": "resources/Assembly/4. Plummer Block/cap.png"},
-            {"name": "Casting", "image": "resources/Assembly/4. Plummer Block/casting.png"},
-            {"name": "Lock Nut", "image": "resources/Assembly/4. Plummer Block/lock nut.png"},
+            {
+                "name": "Casting",
+                "image": "resources/Assembly/4. Plummer Block/casting.png",
+            },
+            {
+                "name": "Lock Nut",
+                "image": "resources/Assembly/4. Plummer Block/lock nut.png",
+            },
             {"name": "Nut", "image": "resources/Assembly/4. Plummer Block/nut.png"},
-        ]
+        ],
     },
     "press-tool": {
         "title": "Press Tool",
@@ -91,11 +129,23 @@ assemblies = {
         "description": "A precision tool used in sheet metal operations to cut, bend, or form metal sheets using a press machine.",
         "image": "resources/Assembly/5. Press Tool/@press tool assembled.png",
         "components": [
-            {"name": "Bottom Plate", "image": "resources/Assembly/5. Press Tool/bottom plate.png"},
-            {"name": "Guide Bush", "image": "resources/Assembly/5. Press Tool/guide bush.png"},
-            {"name": "Guide Pillar", "image": "resources/Assembly/5. Press Tool/guide pillar.png"},
-            {"name": "Top Plate", "image": "resources/Assembly/5. Press Tool/top Plate.png"},
-        ]
+            {
+                "name": "Bottom Plate",
+                "image": "resources/Assembly/5. Press Tool/bottom plate.png",
+            },
+            {
+                "name": "Guide Bush",
+                "image": "resources/Assembly/5. Press Tool/guide bush.png",
+            },
+            {
+                "name": "Guide Pillar",
+                "image": "resources/Assembly/5. Press Tool/guide pillar.png",
+            },
+            {
+                "name": "Top Plate",
+                "image": "resources/Assembly/5. Press Tool/top Plate.png",
+            },
+        ],
     },
     "tool-head-of-shaper": {
         "title": "Tool Head of Shaper",
@@ -103,23 +153,71 @@ assemblies = {
         "description": "The cutting tool holding mechanism of a shaper machine, allowing angular adjustment for precise machining.",
         "image": "resources/Assembly/6. Tool Head of Shaper/@tool head of shaper assembled.png",
         "components": [
-            {"name": "Back Plate", "image": "resources/Assembly/6. Tool Head of Shaper/back plate.png"},
-            {"name": "Bush Washer", "image": "resources/Assembly/6. Tool Head of Shaper/bush washer.png"},
-            {"name": "Clamping Screw", "image": "resources/Assembly/6. Tool Head of Shaper/clamping screw.png"},
-            {"name": "Drag Plate", "image": "resources/Assembly/6. Tool Head of Shaper/drag plate.png"},
-            {"name": "Handle", "image": "resources/Assembly/6. Tool Head of Shaper/handle.png"},
-            {"name": "Handle Br", "image": "resources/Assembly/6. Tool Head of Shaper/handle br.png"},
-            {"name": "Nut", "image": "resources/Assembly/6. Tool Head of Shaper/nut.png"},
-            {"name": "Pivot Pin", "image": "resources/Assembly/6. Tool Head of Shaper/pivot pin.png"},
-            {"name": "Small Washer", "image": "resources/Assembly/6. Tool Head of Shaper/small washer.png"},
-            {"name": "Space Bush", "image": "resources/Assembly/6. Tool Head of Shaper/space bush.png"},
-            {"name": "Swivel Plate", "image": "resources/Assembly/6. Tool Head of Shaper/swivel plate.png"},
-            {"name": "Swivel Screw Pin", "image": "resources/Assembly/6. Tool Head of Shaper/swivel screw pin.png"},
-            {"name": "Tool Fixing Screw", "image": "resources/Assembly/6. Tool Head of Shaper/tool fixing screw.png"},
-            {"name": "Tool Holder", "image": "resources/Assembly/6. Tool Head of Shaper/tool holder.png"},
-            {"name": "Vertical Slide", "image": "resources/Assembly/6. Tool Head of Shaper/vertical slide.png"},
-            {"name": "Washer", "image": "resources/Assembly/6. Tool Head of Shaper/washer.png"},
-        ]
+            {
+                "name": "Back Plate",
+                "image": "resources/Assembly/6. Tool Head of Shaper/back plate.png",
+            },
+            {
+                "name": "Bush Washer",
+                "image": "resources/Assembly/6. Tool Head of Shaper/bush washer.png",
+            },
+            {
+                "name": "Clamping Screw",
+                "image": "resources/Assembly/6. Tool Head of Shaper/clamping screw.png",
+            },
+            {
+                "name": "Drag Plate",
+                "image": "resources/Assembly/6. Tool Head of Shaper/drag plate.png",
+            },
+            {
+                "name": "Handle",
+                "image": "resources/Assembly/6. Tool Head of Shaper/handle.png",
+            },
+            {
+                "name": "Handle Br",
+                "image": "resources/Assembly/6. Tool Head of Shaper/handle br.png",
+            },
+            {
+                "name": "Nut",
+                "image": "resources/Assembly/6. Tool Head of Shaper/nut.png",
+            },
+            {
+                "name": "Pivot Pin",
+                "image": "resources/Assembly/6. Tool Head of Shaper/pivot pin.png",
+            },
+            {
+                "name": "Small Washer",
+                "image": "resources/Assembly/6. Tool Head of Shaper/small washer.png",
+            },
+            {
+                "name": "Space Bush",
+                "image": "resources/Assembly/6. Tool Head of Shaper/space bush.png",
+            },
+            {
+                "name": "Swivel Plate",
+                "image": "resources/Assembly/6. Tool Head of Shaper/swivel plate.png",
+            },
+            {
+                "name": "Swivel Screw Pin",
+                "image": "resources/Assembly/6. Tool Head of Shaper/swivel screw pin.png",
+            },
+            {
+                "name": "Tool Fixing Screw",
+                "image": "resources/Assembly/6. Tool Head of Shaper/tool fixing screw.png",
+            },
+            {
+                "name": "Tool Holder",
+                "image": "resources/Assembly/6. Tool Head of Shaper/tool holder.png",
+            },
+            {
+                "name": "Vertical Slide",
+                "image": "resources/Assembly/6. Tool Head of Shaper/vertical slide.png",
+            },
+            {
+                "name": "Washer",
+                "image": "resources/Assembly/6. Tool Head of Shaper/washer.png",
+            },
+        ],
     },
     "motor-blower": {
         "title": "Motor Blower",
@@ -127,28 +225,40 @@ assemblies = {
         "description": "A motor-driven blower assembly used to circulate air in cooling or ventilation systems.",
         "image": "resources/Assembly/7. Motor Blower/@motor blower assemled.png",
         "components": [
-            {"name": "Blower", "image": "resources/Assembly/7. Motor Blower/blower.png"},
+            {
+                "name": "Blower",
+                "image": "resources/Assembly/7. Motor Blower/blower.png",
+            },
             {"name": "Cover", "image": "resources/Assembly/7. Motor Blower/cover.png"},
-            {"name": "Lower Housing", "image": "resources/Assembly/7. Motor Blower/lower housing.png"},
+            {
+                "name": "Lower Housing",
+                "image": "resources/Assembly/7. Motor Blower/lower housing.png",
+            },
             {"name": "Motor", "image": "resources/Assembly/7. Motor Blower/motor.png"},
             {"name": "Shaft", "image": "resources/Assembly/7. Motor Blower/shaft.png"},
-            {"name": "Upper Housing", "image": "resources/Assembly/7. Motor Blower/upper housing.png"},
-        ]
+            {
+                "name": "Upper Housing",
+                "image": "resources/Assembly/7. Motor Blower/upper housing.png",
+            },
+        ],
     },
 }
+
 
 @app.get("/details/{slug}", response_class=HTMLResponse)
 async def details(request: Request, slug: str):
     assembly = assemblies.get(slug)
     if not assembly:
         return HTMLResponse(content="Not found", status_code=404)
-    return templates.TemplateResponse("details.html", {
-        "request": request,
-        "assembly": assembly
-    })
-    
+    return templates.TemplateResponse(
+        "details.html", {"request": request, "assembly": assembly}
+    )
+
+
 @app.exception_handler(StarletteHTTPException)
 async def not_found_handler(request: Request, exc: StarletteHTTPException):
     if exc.status_code == 404:
-        return templates.TemplateResponse("404.html", {"request": request}, status_code=404)
+        return templates.TemplateResponse(
+            "404.html", {"request": request}, status_code=404
+        )
     return HTMLResponse(content=str(exc.detail), status_code=exc.status_code)

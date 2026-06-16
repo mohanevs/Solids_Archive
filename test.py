@@ -1,8 +1,8 @@
 # import os
 # import json
- 
-# ROOT = r"E:\SolidsArchive\resources"  
- 
+
+# ROOT = r"E:\SolidsArchive\resources"
+
 # def build_tree(path):
 #     tree = {}
 #     for entry in sorted(os.listdir(path)):
@@ -12,16 +12,13 @@
 #         else:
 #             tree.setdefault("_files", []).append(entry)
 #     return tree
- 
+
 # if __name__ == "__main__":
 #     result = build_tree(ROOT)
 #     with open("folder_structure.json", "w") as f:
 #         json.dump(result, f, indent=2)
 #     print(json.dumps(result, indent=2))
- 
- 
- 
- 
+
 
 # import json
 
@@ -65,10 +62,6 @@
 #     json.dump(data, out, indent=4)
 
 # print(f"Wrote {len(data)} entries to data.json")
-
-
-
-
 
 
 # from pathlib import Path
