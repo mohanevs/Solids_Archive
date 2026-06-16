@@ -2,6 +2,7 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.templating import Jinja2Templates
 import json
 
@@ -145,3 +146,9 @@ async def details(request: Request, slug: str):
         "request": request,
         "assembly": assembly
     })
+    
+@app.exception_handler(StarletteHTTPException)
+async def not_found_handler(request: Request, exc: StarletteHTTPException):
+    if exc.status_code == 404:
+        return templates.TemplateResponse("404.html", {"request": request}, status_code=404)
+    return HTMLResponse(content=str(exc.detail), status_code=exc.status_code)

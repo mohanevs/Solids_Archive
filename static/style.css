@@ -434,3 +434,31 @@ footer{
     flex-shrink: 0;
 }
 
+.notFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: "Commissioner", sans-serif;
+}
+
+.backHomeBtn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 28px;
+    background-color: #111;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.backHomeBtn:hover {
+    background-color: #333;
+}
+
