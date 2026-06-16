@@ -21,7 +21,7 @@ templates = Jinja2Templates(directory=PUBLIC_DIR / "templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="home.html")
 
 
 @app.get("/search", response_class=HTMLResponse)
@@ -29,9 +29,7 @@ async def search(request: Request):
     data_path = BASE_DIR / "data.json"
     with open(data_path, encoding="utf-8") as f:
         items = json.load(f)
-    return templates.TemplateResponse(
-        "search.html", {"request": request, "items": items}
-    )
+    return templates.TemplateResponse(request=request, name="search.html", context={"items": items})
 
 
 assemblies = {
@@ -249,16 +247,13 @@ assemblies = {
 async def details(request: Request, slug: str):
     assembly = assemblies.get(slug)
     if not assembly:
-        return HTMLResponse(content="Not found", status_code=404)
-    return templates.TemplateResponse(
-        "details.html", {"request": request, "assembly": assembly}
-    )
+        return templates.TemplateResponse(request=request, name="404.html", status_code=404)
+    return templates.TemplateResponse(request=request, name="details.html", context={"assembly": assembly})
+
 
 
 @app.exception_handler(StarletteHTTPException)
 async def not_found_handler(request: Request, exc: StarletteHTTPException):
     if exc.status_code == 404:
-        return templates.TemplateResponse(
-            "404.html", {"request": request}, status_code=404
-        )
+        return templates.TemplateResponse(request=request, name="404.html", status_code=404)
     return HTMLResponse(content=str(exc.detail), status_code=exc.status_code)
